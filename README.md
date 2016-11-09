@@ -1,5 +1,5 @@
 # mph-manager
-This is a free Manager for the MiningPoolHub-Pool written by Piba88
+This is a free Manager for the MiningPoolHub-Pool
 https://miningpoolhub.com/
 --------------
 
