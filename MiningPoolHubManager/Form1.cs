@@ -52,6 +52,7 @@ namespace MiningPoolHubManager
             //coinBindingSource1.Add(new Coin("Vertcoin", 20507, "hub.miningpoolhub.com"));
             //coinBindingSource1.Add(new Coin("Verge (Scrypt)", 20523, "hub.miningpoolhub.com"));
             coinBindingSource1.Add(new Coin("Zcash", 20570, "zcash.miningpoolhub.com"));
+            coinBindingSource1.Add(new Coin("Zclassic", 20575, "zclassic.miningpoolhub.com"));
 
             // add servers
             //serverBindingSource.Add(new Server("us-east"));
@@ -64,7 +65,7 @@ namespace MiningPoolHubManager
             loadFromXML();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void coinComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             computeParameter((Coin)coinComboBox.SelectedItem, (Server)serverComboBox.SelectedItem);
         }
@@ -90,7 +91,7 @@ namespace MiningPoolHubManager
             Process miner = new Process();
             String fileName = null;
             String workingDirectory = null;
-            if (coin.name == "Zcash")
+            if (coin.name == "Zcash" || coin.name == "Zclassic")
             {
                 if (cpuRadioButton.Checked)
                 {
@@ -130,7 +131,7 @@ namespace MiningPoolHubManager
                     miner.StartInfo.Arguments = paramText;
                     miner.Start();
                 }
-                catch(Exception exc)
+                catch(Exception)
                 {
                     resultLabel.Text = "Could not start " + fileName + " miner! Make sure it is placed in the directory: \n " + workingDirectory + "";
                 }
@@ -144,7 +145,7 @@ namespace MiningPoolHubManager
             if (coin != null && server != null)
             {
                 resultLabel.Text = "Coin: " + coin.name + "\nServer: " + server.name + "." + coin.host + "\nPort: " + coin.port + "\nLogin: " + loginTextField.Text + ":x";
-                if (coin.name == "Zcash")
+                if (coin.name == "Zcash" || coin.name == "Zclassic")
                 {
                     cpuRadioButton.Enabled = true;
                     if (cpuRadioButton.Checked)
@@ -269,6 +270,16 @@ namespace MiningPoolHubManager
         {
             saveToXML();
             resultLabel.Text = "Settings saved to file: config.xml";
+        }
+
+        private void coinComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            computeParameter((Coin)coinComboBox.SelectedItem, (Server)serverComboBox.SelectedItem);
+        }
+
+        private void serverComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            computeParameter((Coin)coinComboBox.SelectedItem, (Server)serverComboBox.SelectedItem);
         }
     }
 }

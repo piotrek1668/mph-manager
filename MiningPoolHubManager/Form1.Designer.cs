@@ -72,18 +72,18 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 13);
+            this.label1.Size = new System.Drawing.Size(71, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Login:";
+            this.label1.Text = "Workername:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 42);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 13);
+            this.label2.Size = new System.Drawing.Size(93, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Password (x):";
+            this.label2.Text = "Worker password:";
             // 
             // label3
             // 
@@ -127,7 +127,7 @@
             this.coinComboBox.Name = "coinComboBox";
             this.coinComboBox.Size = new System.Drawing.Size(285, 21);
             this.coinComboBox.TabIndex = 3;
-            this.coinComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.coinComboBox.SelectedIndexChanged += new System.EventHandler(this.coinComboBox_SelectedIndexChanged_1);
             // 
             // coinBindingSource1
             // 
@@ -145,7 +145,6 @@
             this.modeComboBox.Name = "modeComboBox";
             this.modeComboBox.Size = new System.Drawing.Size(285, 21);
             this.modeComboBox.TabIndex = 7;
-            this.modeComboBox.Text = "Simple mining mode (20XXX)";
             // 
             // startButton
             // 
@@ -202,7 +201,7 @@
             this.serverComboBox.Name = "serverComboBox";
             this.serverComboBox.Size = new System.Drawing.Size(285, 21);
             this.serverComboBox.TabIndex = 4;
-            this.serverComboBox.SelectedIndexChanged += new System.EventHandler(this.serverComboBox_SelectedIndexChanged);
+            this.serverComboBox.SelectedIndexChanged += new System.EventHandler(this.serverComboBox_SelectedIndexChanged_1);
             // 
             // serverBindingSource
             // 
