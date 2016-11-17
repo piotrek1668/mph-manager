@@ -1,3 +1,4 @@
+
 This is a free Manager for the MiningPoolHub-Pool
 --------------
 
@@ -14,6 +15,7 @@ Following miners are included in this version:
 - sgminer 5.3.1
 
 --------------
+
 Version - 1.0.1
 - added support for more coins [Adzcoin, Checkcoin, Crevacoin, Dash, Litecoin and many more...]
 - added sgminer 5.3.1
@@ -21,6 +23,7 @@ Version - 1.0.1
 
 Version - 1.0
 - initial version
+
 --------------
 
 If you like this programm and want to help consider to make a donation:
