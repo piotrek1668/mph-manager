@@ -1,19 +1,24 @@
- # mph-manager
 This is a free Manager for the MiningPoolHub-Pool
-https://miningpoolhub.com/
 --------------
 
-With this little programm you can simply start mining Ethereum, Ethereum-classic or zcash with your cpu or gpu on the MiningPoolHub-Pool.
-Just type in your login details from miningpoolhub.com and chose a coin and server then simple start mining!
+With this little programm you can simply start mining with your cpu or gpu on the MiningPoolHub!
+Just write your workerdetails from miningpoolhub.com and chose a coin and server then start mining!
+
+Hint: You can append miner information in the Miner configuration field, 
+e. g. if you need to increase the intensity of the sgminer append the ending -i 12 to the string.
 
 Following miners are included in this version:
-- Claymores Eth/Etc miner (AMD/NVIDIA) - v7.3beta
-- Nheqminer Zec Miner (CPU/NVIDIA) - v0.4b
-- Claymores Zec Miner (AMD) - v4.0
-
-If a miner is outdated, you can simply delete all files inside the miner folder (e.g. 'claymore_zec') and put the new files inside.
+Claymores Eth/Etc miner (AMD/NVIDIA) - v7.3beta
+Nheqminer Zec Miner (CPU/NVIDIA) - v0.4b
+Claymores Zec Miner (AMD) - v6.0
+sgminer 5.3.1
 
 --------------
+
+Version - 1.0.1
+- added support for more coins [Adzcoin, Checkcoin, Crevacoin, Dash, Litecoin and many more...]
+- added sgminer 5.3.1
+- changed clamores zec miner to version 6.0
 
 Version - 1.0
 - initial version
