@@ -14,7 +14,6 @@ Claymores Zec Miner (AMD) - v6.0
 sgminer 5.3.1
 
 --------------
-
 Version - 1.0.1
 - added support for more coins [Adzcoin, Checkcoin, Crevacoin, Dash, Litecoin and many more...]
 - added sgminer 5.3.1
@@ -22,8 +21,8 @@ Version - 1.0.1
 
 Version - 1.0
 - initial version
-
 --------------
+
 If you like this programm and want to help consider to make a donation:
 BTC: 1QKD28k5s59hRKHa8YUHcrTH7GvixuXARx
 
