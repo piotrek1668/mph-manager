@@ -14,6 +14,10 @@ Following miners are included in this version:
 - Claymores Zec Miner (AMD) - v6.0
 - sgminer 5.3.1
 
+![Image of mpg-manager]
+(http://www.piba-soft.de/mph-manager_screenshot.PNG)
+Image from version 1.0
+
 --------------
 
 Version - 1.0.1
