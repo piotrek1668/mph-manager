@@ -24,8 +24,8 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>2</ApplicationRevision>
-    <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.2.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -78,6 +78,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algos.cs" />
     <Compile Include="Coin.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -102,6 +103,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="MiningPoolHubManager_TemporaryKey.pfx" />
+    <None Include="Properties\DataSources\Algo.datasource" />
     <None Include="Properties\DataSources\Coin.datasource" />
     <None Include="Properties\DataSources\Server.datasource" />
     <None Include="Properties\Settings.settings">
