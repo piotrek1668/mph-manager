@@ -1,11 +1,11 @@
-8This is a free Manager for the MiningPoolHub-Pool
+This is a free Manager for the MiningPoolHub-Pool
 --------------
 
 With this little programm you can simply start mining with your cpu or gpu on the MiningPoolHub!
 Just write your workerdetails from miningpoolhub.com and chose a coin and server then start mining!
 
 Hint: You can append miner information in the Miner configuration field, 
-e. g. if you need to increase the intensity of the sgminer append the ending -i 12 to the string.
+e. g. if you need to increase the intensity of the sgminer append the ending -I 12 to the string.
 
 Following miners are included in this version:
 - Claymores Eth/Etc miner (AMD/NVIDIA) - v7.3beta
@@ -13,9 +13,7 @@ Following miners are included in this version:
 - Claymores Zec Miner (AMD) - v8.0
 - sgminer 5.3.1
 
-![Image of mpg-manager]
-(http://www.piba-soft.de/mph-manager_screenshot.PNG)
-Image from version 1.0
+![mph-manager_screenshot](https://cloud.githubusercontent.com/assets/4056411/20688620/e51d5124-b5c1-11e6-8fc8-df30d29f67dc.PNG)
 
 --------------
 
