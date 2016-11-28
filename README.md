@@ -1,5 +1,4 @@
-
-This is a free Manager for the MiningPoolHub-Pool
+8This is a free Manager for the MiningPoolHub-Pool
 --------------
 
 With this little programm you can simply start mining with your cpu or gpu on the MiningPoolHub!
@@ -11,7 +10,7 @@ e. g. if you need to increase the intensity of the sgminer append the ending -i 
 Following miners are included in this version:
 - Claymores Eth/Etc miner (AMD/NVIDIA) - v7.3beta
 - Nheqminer Zec Miner (CPU/NVIDIA) - v0.4b
-- Claymores Zec Miner (AMD) - v6.0
+- Claymores Zec Miner (AMD) - v8.0
 - sgminer 5.3.1
 
 ![Image of mpg-manager]
@@ -19,6 +18,10 @@ Following miners are included in this version:
 Image from version 1.0
 
 --------------
+
+Version - 1.0.2
+- added claymores zec miner version 8.0 beta
+- added algo switching mode
 
 Version - 1.0.1
 - added support for more coins [Adzcoin, Checkcoin, Crevacoin, Dash, Litecoin and many more...]
