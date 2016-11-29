@@ -15,6 +15,12 @@ Following miners are included in this version:
 
 ![mph-manager_screenshot](https://cloud.githubusercontent.com/assets/4056411/20688620/e51d5124-b5c1-11e6-8fc8-df30d29f67dc.PNG)
 
+Requirements (recommended)
+- Windows 10
+- GPU (AMD or NVIDIA)
+- CPU (AMD or INTEL) (64 Bit)
+- MiningPoolHub - Account
+
 --------------
 
 Version - 1.0.2
