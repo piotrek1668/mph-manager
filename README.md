@@ -3,6 +3,8 @@
 This is a free Manager for the MiningPoolHub-Pool
 --------------
 
+![mph-manager build status](https://travis-ci.org/piotrek1668/mph-manager.svg?branch=master)
+
 With this little programm you can simply start mining with your cpu or gpu on the MiningPoolHub!
 Just write your workerdetails from miningpoolhub.com and chose a coin and server then start mining!
 
