@@ -1,3 +1,4 @@
+
 This is a free Manager for the MiningPoolHub-Pool
 --------------
 
@@ -8,10 +9,10 @@ Hint: You can append miner information in the Miner configuration field,
 e. g. if you need to increase the intensity of the sgminer append the ending -I 12 to the string.
 
 Following miners are included in this version:
-- Claymores Eth/Etc miner (AMD/NVIDIA) - v7.3beta
-- Nheqminer Zec Miner (CPU/NVIDIA) - v0.4b
-- Claymores Zec Miner (AMD) - v8.0
-- sgminer 5.3.1
+Claymores Eth/Etc miner (AMD/NVIDIA) - v7.3beta
+Nheqminer Zec Miner (CPU/NVIDIA) - v0.4b
+Claymores Zec Miner (AMD) - v9.2 beta
+sgminer (GPU) - 5.3.1
 
 ![mph-manager_screenshot](https://cloud.githubusercontent.com/assets/4056411/20688620/e51d5124-b5c1-11e6-8fc8-df30d29f67dc.PNG)
 
@@ -22,6 +23,12 @@ Requirements (recommended)
 - MiningPoolHub - Account
 
 --------------
+
+Version - 1.0.3
+- upgraded Claymores zec miner to version 9.2 beta
+- added support for new Coin: Gamecredits
+- added support for new Coin: Myriadcoin (Yescrypt)
+- a bug in siacoin has been fixed
 
 Version - 1.0.2
 - added claymores zec miner version 8.0 beta
@@ -37,7 +44,7 @@ Version - 1.0
 
 --------------
 
-If you like this programm and want to help consider to make a donation:
+If you like the program you can support me with a donation:
 BTC: 1QKD28k5s59hRKHa8YUHcrTH7GvixuXARx
 
 Thank you!
