@@ -1,4 +1,5 @@
 
+
 This is a free Manager for the MiningPoolHub-Pool
 --------------
 
@@ -9,10 +10,10 @@ Hint: You can append miner information in the Miner configuration field,
 e. g. if you need to increase the intensity of the sgminer append the ending -I 12 to the string.
 
 Following miners are included in this version:
-Claymores Eth/Etc miner (AMD/NVIDIA) - v7.3beta
-Nheqminer Zec Miner (CPU/NVIDIA) - v0.4b
-Claymores Zec Miner (AMD) - v9.2 beta
-sgminer (GPU) - 5.3.1
+- Claymores Eth/Etc miner (AMD/NVIDIA) - v7.3beta
+- Nheqminer Zec Miner (CPU/NVIDIA) - v0.4b
+- Claymores Zec Miner (AMD) - v9.2 beta
+- sgminer (GPU) - 5.3.1
 
 ![mph-manager_screenshot](https://cloud.githubusercontent.com/assets/4056411/20688620/e51d5124-b5c1-11e6-8fc8-df30d29f67dc.PNG)
 
