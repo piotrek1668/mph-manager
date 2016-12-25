@@ -5,6 +5,9 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
+using Newtonsoft.Json;
+using System.Net;
+using System.Text;
 
 namespace MiningPoolHubManager
 {
@@ -31,6 +34,7 @@ namespace MiningPoolHubManager
             coinBindingSource1.Add(new Coin("Ethereum-Classic", 20555, "ethereum-classic.miningpoolhub.com", "Ethash", "20"));
             coinBindingSource1.Add(new Coin("Expanse", 20565, "expanse.miningpoolhub.com", "Ethash", "20"));
             coinBindingSource1.Add(new Coin("Feathercoin", 20510, "hub.miningpoolhub.com", "neoscrypt", "12"));
+            coinBindingSource1.Add(new Coin("Gamecredits", 20576, "hub.miningpoolhub.com", "vanilla", "01"));
             coinBindingSource1.Add(new Coin("Geocoin", 20524, "hub.miningpoolhub.com", "qubitcoin", "14"));
             coinBindingSource1.Add(new Coin("Globalboosty", 20543, "hub.miningpoolhub.com", "yescrypt", "21"));
             coinBindingSource1.Add(new Coin("Groestlcoin", 20486, "hub.miningpoolhub.com", "groestlcoin", "04"));
@@ -39,6 +43,7 @@ namespace MiningPoolHubManager
             coinBindingSource1.Add(new Coin("Maxcoin", 20461, "maxcoin.miningpoolhub.com", "maxcoin", "03"));
             coinBindingSource1.Add(new Coin("Myriadcoin (Groestl)", 20479, "myriadcoin-groestl.miningpoolhub.com", "myriadcoin-groestl", "05"));
             coinBindingSource1.Add(new Coin("Myriadcoin (Skein)", 20528, "hub.miningpoolhub.com", "skeincoin", "16"));
+            coinBindingSource1.Add(new Coin("Myriadcoin (Yescrypt)", 20577, "hub.miningpoolhub.com", "yescrypt", "21"));
             coinBindingSource1.Add(new Coin("Phoenixcoin", 20508, "hub.miningpoolhub.com", "neoscrypt", "12"));
             coinBindingSource1.Add(new Coin("Sexcoin", 20463, "hub.miningpoolhub.com", "vanilla", "01"));
             coinBindingSource1.Add(new Coin("Siacoin", 20550, "hub.miningpoolhub.com", "Ethash", "22"));
@@ -75,24 +80,55 @@ namespace MiningPoolHubManager
             algoBindingSource.Add(new Algo("Yescrypt", 17021, "hub.miningpoolhub.com", "yescrypt"));
 
             loadFromXML();
+            /*
+            dynamic stuff1 = JsonConvert.DeserializeObject("{ 'Name': 'Jon Smith', 'Address': { 'City': 'New York', 'State': 'NY' }, 'Age': 42 }");
+
+            string name = stuff1.Name;
+            string address = stuff1.Address.City;
+
+            // Create a request using a URL that can receive a post. 
+            WebRequest request = WebRequest.Create("https://zcash.miningpoolhub.com/index.php?page=api&action=getpoolstatus&api_key=86b5f3556dc98211c40aeb55448a172f990cd4bde923cd00377af53a74154bb8");
+            // Set the Method property of the request to POST.
+            request.Method = "POST";
+            // Create POST data and convert it to a byte array.
+            string postData = "This is a test that posts this string to a Web server.";
+            byte[] byteArray = Encoding.UTF8.GetBytes(postData);
+            // Set the ContentType property of the WebRequest.
+            request.ContentType = "application/x-www-form-urlencoded";
+            // Set the ContentLength property of the WebRequest.
+            request.ContentLength = byteArray.Length;
+            // Get the request stream.
+            Stream dataStream = request.GetRequestStream();
+            // Write the data to the request stream.
+            dataStream.Write(byteArray, 0, byteArray.Length);
+            // Close the Stream object.
+            dataStream.Close();
+            // Get the response.
+            WebResponse response = request.GetResponse();
+            // Display the status.
+            Console.WriteLine(((HttpWebResponse)response).StatusDescription);
+            // Get the stream containing content returned by the server.
+            dataStream = response.GetResponseStream();
+            // Open the stream using a StreamReader for easy access.
+            StreamReader reader = new StreamReader(dataStream);
+            // Read the content.
+            string responseFromServer = reader.ReadToEnd();
+            // Display the content.
+            Console.WriteLine(responseFromServer);
+            string json = responseFromServer;
+            dynamic stuff = JsonConvert.DeserializeObject(json);
+
+            string hashrate = stuff.getpoolstatus.data.hashrate;
+            string currentBlock = stuff.getpoolstatus.data.currentnetworkblock;
+            string lastBlock = stuff.getpoolstatus.data.lastblock;
+            // Clean up the streams.
+            reader.Close();
+            dataStream.Close();
+            response.Close();
+            */
         }
 
-        private void coinComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            computeParameter((Coin)coinComboBox.SelectedItem, (Server)serverComboBox.SelectedItem, (Algo)algoComboBox.SelectedItem);
-        }
-
-        private void serverComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            computeParameter((Coin)coinComboBox.SelectedItem, (Server)serverComboBox.SelectedItem, (Algo)algoComboBox.SelectedItem);
-        }
-
-        private void loginTextField_TextChanged(object sender, EventArgs e)
-        {
-            computeParameter((Coin)coinComboBox.SelectedItem, (Server)serverComboBox.SelectedItem, (Algo)algoComboBox.SelectedItem);
-        }
-
-        private void passwordTextField_TextChanged(object sender, EventArgs e)
+        private void ConfigurationChanged(object sender, EventArgs e)
         {
             computeParameter((Coin)coinComboBox.SelectedItem, (Server)serverComboBox.SelectedItem, (Algo)algoComboBox.SelectedItem);
         }
@@ -285,11 +321,11 @@ namespace MiningPoolHubManager
                             gpuAMDRadioButton.Checked = true;
                         if (gpuNVIDIARadioButton.Checked)
                         {
-                            paramText = "-epool " + serverLocation + "." + host + ":" + port + " -ewal " + loginTextField.Text + " -epsw " + passwordTextField.Text + " -allpools 1 -dpool stratum+tcp://" + host + ":" + port + " -dwal " + loginTextField.Text + " -dpsw " + passwordTextField.Text + " -dcoin sia";
+                            paramText = "-epool " + serverLocation + ".ethereum.miningpoolhub.com:20535 -ewal " + loginTextField.Text + " -epsw " + passwordTextField.Text + " -allpools 1 -dpool stratum+tcp://" + host + ":" + port + " -dwal " + loginTextField.Text + " -dpsw " + passwordTextField.Text + " -dcoin sia";
                         }
                         else if (gpuAMDRadioButton.Checked)
                         {
-                            paramText = "-epool " + serverLocation + "." + host + ":" + port + " -ewal " + loginTextField.Text + " -epsw " + passwordTextField.Text + " -allpools 1 -dpool stratum+tcp://" + host + ":" + port + " -dwal " + loginTextField.Text + " -dpsw " + passwordTextField.Text + " -dcoin sia";
+                            paramText = "-epool " + serverLocation + ".ethereum.miningpoolhub.com:20535 -ewal " + loginTextField.Text + " -epsw " + passwordTextField.Text + " -allpools 1 -dpool stratum+tcp://" + host + ":" + port + " -dwal " + loginTextField.Text + " -dpsw " + passwordTextField.Text + " -dcoin sia";
                         }
                         break;
                     case "Dash":
@@ -339,21 +375,6 @@ namespace MiningPoolHubManager
             
         }
 
-        private void cpuRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            computeParameter((Coin)coinComboBox.SelectedItem, (Server)serverComboBox.SelectedItem, (Algo)algoComboBox.SelectedItem);
-        }
-
-        private void gpuAMDRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            computeParameter((Coin)coinComboBox.SelectedItem, (Server)serverComboBox.SelectedItem, (Algo)algoComboBox.SelectedItem);
-        }
-
-        private void gpuNVIDIARadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            computeParameter((Coin)coinComboBox.SelectedItem, (Server)serverComboBox.SelectedItem, (Algo)algoComboBox.SelectedItem);
-        }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Process.Start("https://miningpoolhub.com/");
@@ -365,7 +386,7 @@ namespace MiningPoolHubManager
             {
                 XmlTextWriter configXMLWriter = new XmlTextWriter("config.xml",
                                                            System.Text.Encoding.UTF8);
-                configXMLWriter.Formatting = Formatting.Indented;
+                configXMLWriter.Formatting = System.Xml.Formatting.Indented;
                 configXMLWriter.WriteStartDocument(false);
 
                 configXMLWriter.WriteComment("MiningPoolHubManager - Configurationfile");
@@ -389,7 +410,7 @@ namespace MiningPoolHubManager
                 configXMLWriter.Flush();
                 configXMLWriter.Close();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 
             }
@@ -433,7 +454,7 @@ namespace MiningPoolHubManager
                    algoComboBox.SelectedIndex = Int32.Parse(items.Element("algo").Value);
                 }
             }
-            catch(Exception e)
+            catch(Exception)
             {
 
             }
@@ -444,16 +465,6 @@ namespace MiningPoolHubManager
         {
             saveToXML();
             resultLabel.Text = "Settings saved to file: config.xml";
-        }
-
-        private void coinComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            computeParameter((Coin)coinComboBox.SelectedItem, (Server)serverComboBox.SelectedItem, (Algo)algoComboBox.SelectedItem);
-        }
-
-        private void serverComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            computeParameter((Coin)coinComboBox.SelectedItem, (Server)serverComboBox.SelectedItem, (Algo)algoComboBox.SelectedItem);
         }
 
         private void configTextBox_TextChanged(object sender, EventArgs e)
@@ -473,11 +484,6 @@ namespace MiningPoolHubManager
                 coinComboBox.Enabled = false;
                 algoComboBox.Enabled = true;
             }
-            computeParameter((Coin)coinComboBox.SelectedItem, (Server)serverComboBox.SelectedItem, (Algo)algoComboBox.SelectedItem);
-        }
-
-        private void algoComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
             computeParameter((Coin)coinComboBox.SelectedItem, (Server)serverComboBox.SelectedItem, (Algo)algoComboBox.SelectedItem);
         }
     }

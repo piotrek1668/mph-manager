@@ -19,7 +19,7 @@
                 {
                     components.Dispose();
                 }
-                catch(System.Exception e)
+                catch(System.Exception)
                 {
 
                 }
@@ -118,7 +118,7 @@
             this.loginTextField.Size = new System.Drawing.Size(285, 20);
             this.loginTextField.TabIndex = 1;
             this.loginTextField.Text = "loginname.worker";
-            this.loginTextField.TextChanged += new System.EventHandler(this.loginTextField_TextChanged);
+            this.loginTextField.TextChanged += new System.EventHandler(this.ConfigurationChanged);
             // 
             // coinComboBox
             // 
@@ -134,7 +134,7 @@
             this.coinComboBox.Name = "coinComboBox";
             this.coinComboBox.Size = new System.Drawing.Size(285, 21);
             this.coinComboBox.TabIndex = 3;
-            this.coinComboBox.SelectedIndexChanged += new System.EventHandler(this.coinComboBox_SelectedIndexChanged_1);
+            this.coinComboBox.SelectedIndexChanged += new System.EventHandler(this.ConfigurationChanged);
             // 
             // coinBindingSource1
             // 
@@ -173,7 +173,7 @@
             this.passwordTextField.Size = new System.Drawing.Size(285, 20);
             this.passwordTextField.TabIndex = 2;
             this.passwordTextField.Text = "x";
-            this.passwordTextField.TextChanged += new System.EventHandler(this.passwordTextField_TextChanged);
+            this.passwordTextField.TextChanged += new System.EventHandler(this.ConfigurationChanged);
             // 
             // coinBindingSource
             // 
@@ -210,7 +210,7 @@
             this.serverComboBox.Name = "serverComboBox";
             this.serverComboBox.Size = new System.Drawing.Size(285, 21);
             this.serverComboBox.TabIndex = 5;
-            this.serverComboBox.SelectedIndexChanged += new System.EventHandler(this.serverComboBox_SelectedIndexChanged_1);
+            this.serverComboBox.SelectedIndexChanged += new System.EventHandler(this.ConfigurationChanged);
             // 
             // serverBindingSource
             // 
@@ -264,7 +264,7 @@
             this.cpuRadioButton.TabStop = true;
             this.cpuRadioButton.Text = "CPU";
             this.cpuRadioButton.UseVisualStyleBackColor = true;
-            this.cpuRadioButton.CheckedChanged += new System.EventHandler(this.cpuRadioButton_CheckedChanged);
+            this.cpuRadioButton.CheckedChanged += new System.EventHandler(this.ConfigurationChanged);
             // 
             // gpuAMDRadioButton
             // 
@@ -275,7 +275,7 @@
             this.gpuAMDRadioButton.TabIndex = 6;
             this.gpuAMDRadioButton.Text = "GPU (AMD)";
             this.gpuAMDRadioButton.UseVisualStyleBackColor = true;
-            this.gpuAMDRadioButton.CheckedChanged += new System.EventHandler(this.gpuAMDRadioButton_CheckedChanged);
+            this.gpuAMDRadioButton.CheckedChanged += new System.EventHandler(this.ConfigurationChanged);
             // 
             // gpuNVIDIARadioButton
             // 
@@ -286,7 +286,7 @@
             this.gpuNVIDIARadioButton.TabIndex = 7;
             this.gpuNVIDIARadioButton.Text = "GPU (NVIDIA)";
             this.gpuNVIDIARadioButton.UseVisualStyleBackColor = true;
-            this.gpuNVIDIARadioButton.CheckedChanged += new System.EventHandler(this.gpuNVIDIARadioButton_CheckedChanged);
+            this.gpuNVIDIARadioButton.CheckedChanged += new System.EventHandler(this.ConfigurationChanged);
             // 
             // saveSettingsButton
             // 
@@ -308,6 +308,7 @@
             this.sgminerRadioButton.TabStop = true;
             this.sgminerRadioButton.Text = "sgminer (x64)";
             this.sgminerRadioButton.UseVisualStyleBackColor = true;
+            this.sgminerRadioButton.CheckedChanged += new System.EventHandler(this.ConfigurationChanged);
             // 
             // label8
             // 
@@ -316,7 +317,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(37, 13);
             this.label8.TabIndex = 17;
-            this.label8.Text = "v1.0.2";
+            this.label8.Text = "v1.0.3";
             // 
             // label9
             // 
@@ -337,7 +338,7 @@
             this.algoComboBox.Name = "algoComboBox";
             this.algoComboBox.Size = new System.Drawing.Size(285, 21);
             this.algoComboBox.TabIndex = 19;
-            this.algoComboBox.SelectedIndexChanged += new System.EventHandler(this.algoComboBox_SelectedIndexChanged);
+            this.algoComboBox.SelectedIndexChanged += new System.EventHandler(this.ConfigurationChanged);
             // 
             // algoBindingSource
             // 
