@@ -41,6 +41,7 @@ namespace MiningPoolHubManager
             coinBindingSource1.Add(new Coin("Influx", 20532, "hub.miningpoolhub.com", "darkcoin-mod", "07"));
             coinBindingSource1.Add(new Coin("Litecoin", 20460, "hub.miningpoolhub.com", "vanilla", "01"));
             coinBindingSource1.Add(new Coin("Maxcoin", 20461, "maxcoin.miningpoolhub.com", "maxcoin", "03"));
+            coinBindingSource1.Add(new Coin("Monero", 20580, "monero.miningpoolhub.com", "cryptonight", "24"));
             coinBindingSource1.Add(new Coin("Myriadcoin (Groestl)", 20479, "myriadcoin-groestl.miningpoolhub.com", "myriadcoin-groestl", "05"));
             coinBindingSource1.Add(new Coin("Myriadcoin (Skein)", 20528, "hub.miningpoolhub.com", "skeincoin", "16"));
             coinBindingSource1.Add(new Coin("Myriadcoin (Yescrypt)", 20577, "hub.miningpoolhub.com", "yescrypt", "21"));
@@ -78,6 +79,7 @@ namespace MiningPoolHubManager
             algoBindingSource.Add(new Algo("Skein", 17016, "hub.miningpoolhub.com", "skeincoin"));
             algoBindingSource.Add(new Algo("X11", 17007, "hub.miningpoolhub.com", "darkcoin-mod"));
             algoBindingSource.Add(new Algo("Yescrypt", 17021, "hub.miningpoolhub.com", "yescrypt"));
+            algoBindingSource.Add(new Algo("Cryptonight", 17024, "cryptonight-hub.miningpoolhub.com", "cryptonight"));
 
             loadFromXML();
             /*
@@ -164,8 +166,8 @@ namespace MiningPoolHubManager
                     }
                     else if (gpuNVIDIARadioButton.Checked)
                     {
-                        workingDirectory = Environment.CurrentDirectory + "\\nheqminer_zec\\";
-                        fileName = "nheqminer.exe";
+                        workingDirectory = Environment.CurrentDirectory + "\\zecminer\\";
+                        fileName = "miner.exe";
                     }
                     break;
                 case "Ethereum":
@@ -182,6 +184,19 @@ namespace MiningPoolHubManager
                     {
                         workingDirectory = Environment.CurrentDirectory + "\\claymore_eth\\";
                         fileName = "EthDcrMiner64.exe";
+                    }
+                    break;
+                case "Monero":
+                case "Cryptonight":
+                    if (gpuAMDRadioButton.Checked)
+                    {
+                        workingDirectory = Environment.CurrentDirectory + "\\claymore_monero\\";
+                        fileName = "NsGpuCNMiner.exe";
+                    }
+                    else if (gpuNVIDIARadioButton.Checked)
+                    {
+                        workingDirectory = Environment.CurrentDirectory + "\\ccminer_monero\\";
+                        fileName = "ccminer.exe";
                     }
                     break;
                 default:
@@ -267,6 +282,8 @@ namespace MiningPoolHubManager
                 else
                     name = algo.name;
 
+                if (!name.Equals("Monero") || !name.Equals("Cryptonight"))
+                    label1.Text = "Workername:";
                 switch (name)
                 {
                     case "Zcash":
@@ -284,7 +301,7 @@ namespace MiningPoolHubManager
                         }
                         else if (gpuNVIDIARadioButton.Checked)
                         {
-                            paramText = "-l " + serverLocation + "." + host + ":" + port + " -u " + loginTextField.Text + " -p " + passwordTextField.Text + " -cd 0";
+                            paramText = "--server " + serverLocation + "." + host + " --port " + port + " --user " + loginTextField.Text + " --pass " + passwordTextField.Text;
                         }
                         else if (gpuAMDRadioButton.Checked)
                         {
@@ -308,6 +325,26 @@ namespace MiningPoolHubManager
                         else if (gpuAMDRadioButton.Checked)
                         {
                             paramText = "-epool " + serverLocation + "." + host + ":" + port + " -ewal " + loginTextField.Text + " -epsw " + passwordTextField.Text + " -allpools 1";
+                        }
+                        break;
+                    case "Monero":
+                    case "Cryptonight":
+                        cpuRadioButton.Enabled = false;
+                        gpuNVIDIARadioButton.Enabled = false;
+                        gpuAMDRadioButton.Enabled = true;
+                        sgminerRadioButton.Enabled = false;
+                        label1.Text = "Monero address:";
+                        resultLabel.Text = "Warning: The Monero address has to be added in the pools wallet first. Afterwards use Monero address in Monero address-field instead of login.workername!";
+                        if (!cpuRadioButton.Checked && !gpuAMDRadioButton.Checked && !gpuNVIDIARadioButton.Checked)
+                            gpuAMDRadioButton.Checked = true;
+                        if (gpuNVIDIARadioButton.Checked)
+                        {
+                            // TODO: nvidia miner should be added here
+                            paramText = "-epool " + serverLocation + "." + host + ":" + port + " -ewal " + loginTextField.Text + " -epsw " + passwordTextField.Text + " -allpools 1";
+                        }
+                        else if (gpuAMDRadioButton.Checked)
+                        {
+                            paramText = "-o stratum+tcp://" + serverLocation + "." + host + ":" + port + " -u " + loginTextField.Text + " -p " + passwordTextField.Text + " -nofee 1";
                         }
                         break;
                     case "Siacoin":
