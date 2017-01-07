@@ -76,36 +76,40 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 16);
+            this.label1.Location = new System.Drawing.Point(16, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 13);
+            this.label1.Size = new System.Drawing.Size(93, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Workername:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 42);
+            this.label2.Location = new System.Drawing.Point(16, 52);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 13);
+            this.label2.Size = new System.Drawing.Size(122, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Worker password:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 68);
+            this.label3.Location = new System.Drawing.Point(16, 84);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 13);
+            this.label3.Size = new System.Drawing.Size(40, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Coin:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 124);
+            this.label4.Location = new System.Drawing.Point(16, 153);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.Size = new System.Drawing.Size(47, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Mode:";
             // 
@@ -113,9 +117,10 @@
             // 
             this.loginTextField.AccessibleDescription = "";
             this.loginTextField.AccessibleName = "";
-            this.loginTextField.Location = new System.Drawing.Point(132, 13);
+            this.loginTextField.Location = new System.Drawing.Point(176, 16);
+            this.loginTextField.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.loginTextField.Name = "loginTextField";
-            this.loginTextField.Size = new System.Drawing.Size(285, 20);
+            this.loginTextField.Size = new System.Drawing.Size(379, 22);
             this.loginTextField.TabIndex = 1;
             this.loginTextField.Text = "loginname.worker";
             this.loginTextField.TextChanged += new System.EventHandler(this.ConfigurationChanged);
@@ -130,9 +135,10 @@
             this.coinComboBox.DisplayMember = "name";
             this.coinComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.coinComboBox.FormattingEnabled = true;
-            this.coinComboBox.Location = new System.Drawing.Point(132, 65);
+            this.coinComboBox.Location = new System.Drawing.Point(176, 80);
+            this.coinComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.coinComboBox.Name = "coinComboBox";
-            this.coinComboBox.Size = new System.Drawing.Size(285, 21);
+            this.coinComboBox.Size = new System.Drawing.Size(379, 24);
             this.coinComboBox.TabIndex = 3;
             this.coinComboBox.SelectedIndexChanged += new System.EventHandler(this.ConfigurationChanged);
             // 
@@ -148,18 +154,20 @@
             "Simple coin mining (20XXX)",
             "Algo switch mining (17XXX)",
             "Multi-Algo switch mining (12XXX)"});
-            this.modeComboBox.Location = new System.Drawing.Point(132, 121);
+            this.modeComboBox.Location = new System.Drawing.Point(176, 149);
+            this.modeComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.modeComboBox.Name = "modeComboBox";
-            this.modeComboBox.Size = new System.Drawing.Size(285, 21);
+            this.modeComboBox.Size = new System.Drawing.Size(379, 24);
             this.modeComboBox.TabIndex = 4;
             this.modeComboBox.SelectedIndexChanged += new System.EventHandler(this.modeComboBox_SelectedIndexChanged);
             // 
             // startButton
             // 
             this.startButton.Enabled = false;
-            this.startButton.Location = new System.Drawing.Point(602, 306);
+            this.startButton.Location = new System.Drawing.Point(803, 377);
+            this.startButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(110, 23);
+            this.startButton.Size = new System.Drawing.Size(147, 28);
             this.startButton.TabIndex = 9;
             this.startButton.Text = "Start mining!";
             this.startButton.UseVisualStyleBackColor = true;
@@ -167,10 +175,11 @@
             // 
             // passwordTextField
             // 
-            this.passwordTextField.Location = new System.Drawing.Point(132, 39);
+            this.passwordTextField.Location = new System.Drawing.Point(176, 48);
+            this.passwordTextField.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.passwordTextField.Name = "passwordTextField";
             this.passwordTextField.PasswordChar = '*';
-            this.passwordTextField.Size = new System.Drawing.Size(285, 20);
+            this.passwordTextField.Size = new System.Drawing.Size(379, 22);
             this.passwordTextField.TabIndex = 2;
             this.passwordTextField.Text = "x";
             this.passwordTextField.TextChanged += new System.EventHandler(this.ConfigurationChanged);
@@ -183,18 +192,20 @@
             // 
             this.resultLabel.AccessibleName = "";
             this.resultLabel.AutoSize = true;
-            this.resultLabel.Location = new System.Drawing.Point(12, 232);
+            this.resultLabel.Location = new System.Drawing.Point(16, 286);
+            this.resultLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.resultLabel.Name = "resultLabel";
-            this.resultLabel.Size = new System.Drawing.Size(155, 13);
+            this.resultLabel.Size = new System.Drawing.Size(208, 17);
             this.resultLabel.TabIndex = 10;
             this.resultLabel.Text = "Fill out the form above to start...";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 151);
+            this.label5.Location = new System.Drawing.Point(16, 186);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 13);
+            this.label5.Size = new System.Drawing.Size(108, 17);
             this.label5.TabIndex = 11;
             this.label5.Text = "Server-Country:";
             // 
@@ -206,9 +217,10 @@
             this.serverComboBox.DisplayMember = "name";
             this.serverComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.serverComboBox.FormattingEnabled = true;
-            this.serverComboBox.Location = new System.Drawing.Point(132, 148);
+            this.serverComboBox.Location = new System.Drawing.Point(176, 182);
+            this.serverComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.serverComboBox.Name = "serverComboBox";
-            this.serverComboBox.Size = new System.Drawing.Size(285, 21);
+            this.serverComboBox.Size = new System.Drawing.Size(379, 24);
             this.serverComboBox.TabIndex = 5;
             this.serverComboBox.SelectedIndexChanged += new System.EventHandler(this.ConfigurationChanged);
             // 
@@ -219,18 +231,20 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(583, 13);
+            this.pictureBox1.Location = new System.Drawing.Point(777, 16);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(126, 120);
+            this.pictureBox1.Size = new System.Drawing.Size(168, 148);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // configTextBox
             // 
-            this.configTextBox.Location = new System.Drawing.Point(132, 175);
+            this.configTextBox.Location = new System.Drawing.Point(176, 215);
+            this.configTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.configTextBox.Name = "configTextBox";
-            this.configTextBox.Size = new System.Drawing.Size(577, 20);
+            this.configTextBox.Size = new System.Drawing.Size(768, 22);
             this.configTextBox.TabIndex = 13;
             this.configTextBox.Text = "-";
             this.configTextBox.TextChanged += new System.EventHandler(this.configTextBox_TextChanged);
@@ -238,18 +252,20 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 178);
+            this.label6.Location = new System.Drawing.Point(16, 219);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 13);
+            this.label6.Size = new System.Drawing.Size(133, 17);
             this.label6.TabIndex = 14;
             this.label6.Text = "Miner configuration:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 204);
+            this.label7.Location = new System.Drawing.Point(16, 251);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 13);
+            this.label7.Size = new System.Drawing.Size(92, 17);
             this.label7.TabIndex = 15;
             this.label7.Text = "Mining mode:";
             // 
@@ -257,9 +273,10 @@
             // 
             this.cpuRadioButton.AutoSize = true;
             this.cpuRadioButton.Checked = true;
-            this.cpuRadioButton.Location = new System.Drawing.Point(132, 202);
+            this.cpuRadioButton.Location = new System.Drawing.Point(176, 249);
+            this.cpuRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cpuRadioButton.Name = "cpuRadioButton";
-            this.cpuRadioButton.Size = new System.Drawing.Size(47, 17);
+            this.cpuRadioButton.Size = new System.Drawing.Size(57, 21);
             this.cpuRadioButton.TabIndex = 5;
             this.cpuRadioButton.TabStop = true;
             this.cpuRadioButton.Text = "CPU";
@@ -269,9 +286,10 @@
             // gpuAMDRadioButton
             // 
             this.gpuAMDRadioButton.AutoSize = true;
-            this.gpuAMDRadioButton.Location = new System.Drawing.Point(186, 202);
+            this.gpuAMDRadioButton.Location = new System.Drawing.Point(248, 249);
+            this.gpuAMDRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gpuAMDRadioButton.Name = "gpuAMDRadioButton";
-            this.gpuAMDRadioButton.Size = new System.Drawing.Size(81, 17);
+            this.gpuAMDRadioButton.Size = new System.Drawing.Size(103, 21);
             this.gpuAMDRadioButton.TabIndex = 6;
             this.gpuAMDRadioButton.Text = "GPU (AMD)";
             this.gpuAMDRadioButton.UseVisualStyleBackColor = true;
@@ -280,9 +298,10 @@
             // gpuNVIDIARadioButton
             // 
             this.gpuNVIDIARadioButton.AutoSize = true;
-            this.gpuNVIDIARadioButton.Location = new System.Drawing.Point(274, 202);
+            this.gpuNVIDIARadioButton.Location = new System.Drawing.Point(365, 249);
+            this.gpuNVIDIARadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gpuNVIDIARadioButton.Name = "gpuNVIDIARadioButton";
-            this.gpuNVIDIARadioButton.Size = new System.Drawing.Size(93, 17);
+            this.gpuNVIDIARadioButton.Size = new System.Drawing.Size(117, 21);
             this.gpuNVIDIARadioButton.TabIndex = 7;
             this.gpuNVIDIARadioButton.Text = "GPU (NVIDIA)";
             this.gpuNVIDIARadioButton.UseVisualStyleBackColor = true;
@@ -290,9 +309,10 @@
             // 
             // saveSettingsButton
             // 
-            this.saveSettingsButton.Location = new System.Drawing.Point(494, 306);
+            this.saveSettingsButton.Location = new System.Drawing.Point(659, 377);
+            this.saveSettingsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saveSettingsButton.Name = "saveSettingsButton";
-            this.saveSettingsButton.Size = new System.Drawing.Size(102, 23);
+            this.saveSettingsButton.Size = new System.Drawing.Size(136, 28);
             this.saveSettingsButton.TabIndex = 8;
             this.saveSettingsButton.Text = "Save settings";
             this.saveSettingsButton.UseVisualStyleBackColor = true;
@@ -301,9 +321,10 @@
             // sgminerRadioButton
             // 
             this.sgminerRadioButton.AutoSize = true;
-            this.sgminerRadioButton.Location = new System.Drawing.Point(373, 202);
+            this.sgminerRadioButton.Location = new System.Drawing.Point(497, 249);
+            this.sgminerRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sgminerRadioButton.Name = "sgminerRadioButton";
-            this.sgminerRadioButton.Size = new System.Drawing.Size(87, 17);
+            this.sgminerRadioButton.Size = new System.Drawing.Size(115, 21);
             this.sgminerRadioButton.TabIndex = 16;
             this.sgminerRadioButton.TabStop = true;
             this.sgminerRadioButton.Text = "sgminer (x64)";
@@ -313,18 +334,20 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(675, 290);
+            this.label8.Location = new System.Drawing.Point(900, 357);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(37, 13);
+            this.label8.Size = new System.Drawing.Size(47, 17);
             this.label8.TabIndex = 17;
-            this.label8.Text = "v1.0.4";
+            this.label8.Text = "v1.0.5";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 96);
+            this.label9.Location = new System.Drawing.Point(16, 118);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 13);
+            this.label9.Size = new System.Drawing.Size(71, 17);
             this.label9.TabIndex = 18;
             this.label9.Text = "Algorithm:";
             // 
@@ -334,9 +357,10 @@
             this.algoComboBox.DisplayMember = "name";
             this.algoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.algoComboBox.FormattingEnabled = true;
-            this.algoComboBox.Location = new System.Drawing.Point(132, 93);
+            this.algoComboBox.Location = new System.Drawing.Point(176, 114);
+            this.algoComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.algoComboBox.Name = "algoComboBox";
-            this.algoComboBox.Size = new System.Drawing.Size(285, 21);
+            this.algoComboBox.Size = new System.Drawing.Size(379, 24);
             this.algoComboBox.TabIndex = 19;
             this.algoComboBox.SelectedIndexChanged += new System.EventHandler(this.ConfigurationChanged);
             // 
@@ -346,9 +370,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 341);
+            this.ClientSize = new System.Drawing.Size(965, 420);
             this.Controls.Add(this.algoComboBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -376,6 +400,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "MiningPoolHub Manager";

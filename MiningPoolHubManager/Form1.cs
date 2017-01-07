@@ -281,9 +281,7 @@ namespace MiningPoolHubManager
                     name = coin.name;
                 else
                     name = algo.name;
-
-                if (!name.Equals("Monero") || !name.Equals("Cryptonight"))
-                    label1.Text = "Workername:";
+                
                 switch (name)
                 {
                     case "Zcash":
@@ -332,10 +330,7 @@ namespace MiningPoolHubManager
                         cpuRadioButton.Enabled = false;
                         gpuNVIDIARadioButton.Enabled = false;
                         gpuAMDRadioButton.Enabled = true;
-                        sgminerRadioButton.Enabled = false;
-                        label1.Text = "Monero address:";
-                        resultLabel.Text = "Warning: The Monero address has to be added in the pools wallet first. Afterwards use Monero address in Monero address-field instead of login.workername!";
-                        if (!cpuRadioButton.Checked && !gpuAMDRadioButton.Checked && !gpuNVIDIARadioButton.Checked)
+                        sgminerRadioButton.Enabled = false;if (!cpuRadioButton.Checked && !gpuAMDRadioButton.Checked && !gpuNVIDIARadioButton.Checked)
                             gpuAMDRadioButton.Checked = true;
                         if (gpuNVIDIARadioButton.Checked)
                         {
@@ -344,7 +339,7 @@ namespace MiningPoolHubManager
                         }
                         else if (gpuAMDRadioButton.Checked)
                         {
-                            paramText = "-o stratum+tcp://" + serverLocation + "." + host + ":" + port + " -u " + loginTextField.Text + " -p " + passwordTextField.Text + " -nofee 1";
+                            paramText = "-o ssl://" + serverLocation + "." + host + ":" + port + " -u " + loginTextField.Text + " -p " + passwordTextField.Text + "";
                         }
                         break;
                     case "Siacoin":
