@@ -13,6 +13,7 @@ e. g. if you need to increase the intensity of the sgminer append the ending -I 
 
 Following miners are included in this version:
 - Claymores Eth/Etc miner (AMD/NVIDIA) - v7.3beta
+- Claymores Monero miner (AMD) - 9.7 beta
 - Nheqminer Zec Miner (CPU) - v0.4b
 - Claymores Zec Miner (AMD) - v9.2 beta
 - sgminer (GPU) - 5.3.1
@@ -27,6 +28,10 @@ Requirements (recommended)
 - MiningPoolHub - Account
 
 --------------
+
+Version - 1.0.5
+- changed monero mining into secure ssl mining with lower Devfee
+- upgraded Claymores monero miner to version 9.7 beta
 
 Version - 1.0.4
 - added support for new Coin: Monero (AMD)
